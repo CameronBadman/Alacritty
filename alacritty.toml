@@ -1,0 +1,138 @@
+# Window configuration
+[window]
+opacity = 0.85
+padding = { x = 10, y = 10 }
+decorations = "none"
+startup_mode = "Windowed"
+dynamic_title = true
+dimensions = { columns = 120, lines = 30 }
+
+# Scrolling configuration
+[scrolling]
+history = 10000
+multiplier = 3
+
+# Font configuration
+[font]
+size = 11
+offset = { x = 0, y = 1 }
+glyph_offset = { x = 0, y = 0 }
+builtin_box_drawing = true
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+# Cursor configuration
+[cursor]
+blink_interval = 750
+unfocused_hollow = true
+thickness = 0.15
+
+[cursor.style]
+shape = "Block"
+blinking = "On"
+
+# Color scheme
+[colors.primary]
+background = "#1d1f21"
+foreground = "#c5c8c6"
+
+[colors.cursor]
+text = "#1d1f21"
+cursor = "#c5c8c6"
+
+[colors.selection]
+text = "CellForeground"
+background = "#3e4451"
+
+[colors.normal]
+black = "#1d1f21"
+red = "#cc6666"
+green = "#b5bd68"
+yellow = "#f0c674"
+blue = "#81a2be"
+magenta = "#b294bb"
+cyan = "#8abeb7"
+white = "#c5c8c6"
+
+[colors.bright]
+black = "#666666"
+red = "#d54e53"
+green = "#b9ca4a"
+yellow = "#e7c547"
+blue = "#7aa6da"
+magenta = "#c397d8"
+cyan = "#70c0b1"
+white = "#eaeaea"
+
+# URL/Hints configuration
+[hints]
+alphabet = "jfkdls;ahgurieowpq"
+
+[[hints.enabled]]
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+command = "xdg-open"
+post_processing = true
+mouse.enabled = true
+binding = { key = "U", mods = "Control|Shift" }
+
+# Mouse configuration
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+mouse = "Right"
+action = "Paste"
+
+# Key bindings
+[keyboard]
+bindings = [
+    # Basic terminal operations
+    { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" },
+    # Clipboard
+    { key = "V", mods = "Control|Shift", action = "Paste" },
+    { key = "C", mods = "Control|Shift", action = "Copy" },
+    { key = "Insert", mods = "Shift", action = "PasteSelection" },
+    
+    # Font size
+    { key = "Plus", mods = "Control", action = "IncreaseFontSize" },
+    { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+    { key = "Key0", mods = "Control", action = "ResetFontSize" },
+    
+    # Window management
+    { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+    { key = "W", mods = "Control|Shift", action = "Quit" },
+    { key = "F", mods = "Control|Shift", action = "ToggleFullscreen" },
+    
+    # Scrolling
+    { key = "PageUp", mods = "Shift", action = "ScrollPageUp" },
+    { key = "PageDown", mods = "Shift", action = "ScrollPageDown" },
+    { key = "Home", mods = "Shift", action = "ScrollToTop" },
+    { key = "End", mods = "Shift", action = "ScrollToBottom" },
+    
+    # Search
+    { key = "F", mods = "Control|Shift", action = "SearchForward" },
+    { key = "B", mods = "Control|Shift", action = "SearchBackward" }
+
+
+]
+
+[terminal]
+
+# Shell integration
+[terminal.shell]
+program = "/bin/zsh"
+args = ["-l"]
