@@ -134,5 +134,5 @@ bindings = [
 
 # Shell integration
 [terminal.shell]
-program = "/bin/zsh"
+program = "/bin/bash"
 args = ["-l"]
