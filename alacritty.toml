@@ -134,5 +134,5 @@ bindings = [
 
 # Shell integration
 [terminal.shell]
-program = "/bin/bash"
+program = "bash"
 args = ["-l"]
